@@ -847,27 +847,82 @@
 
     <!-- Help start  -->
     <section id="help" class="padding-medium">
-      <div class="container-fluid px-md-5">
-        <div class="row d-flex justify-content-between align-items-center">
-          <div class="col-md-6">
-            <div class="image-holder d-flex">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.380239873581!2d104.75941879999999!3d-2.9918046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b77189d7385d5%3A0x54edca35124337f8!2sKESDAM%20II%2FSRIWIJAYA!5e0!3m2!1sid!2sid!4v1768995596407!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+  <div class="container-fluid px-md-5">
+    <div class="row d-flex justify-content-between align-items-center">
+
+      <!-- MAP -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="image-holder d-flex">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.380239873581!2d104.75941879999999!3d-2.9918046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b77189d7385d5%3A0x54edca35124337f8!2sKESDAM%20II%2FSRIWIJAYA!5e0!3m2!1sid!2sid!4v1768995596407!5m2!1sid!2sid"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- FORM PENGADUAN -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+<div class="col-md-6 col-lg-3 mb-3">
+            <div class="card">
+              <img
+                  src="images/anti.png"
+                  class="card-img-top rounded-4"
+                  alt="Luxury apartment with modern kitchen"
+              />
+            </div>
           </div>
 
-          <div class="col-md-6">
-            <div class="text-content ps-md-5 mt-4 mt-md-0">
-              <h2 class="text-capitalize">Alamat Kesdam II/Swj</h2>
-              <p>
-                19 Ilir, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan
-              </p>
-              
-            </div>
+            <h5 class="card-title mb-3">Form Pengaduan Masyarakat</h5>
+           
+
+            <form onsubmit="kirimPengaduan(event)">
+  <!-- NAMA -->
+  <div class="mb-3">
+    <label for="nama" class="form-label">Nama Lengkap</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nama"
+      placeholder="Masukkan nama lengkap"
+      required
+    />
+  </div>
+
+  <!-- ISI PENGADUAN -->
+  <div class="mb-3">
+    <label for="pengaduan" class="form-label">Uraian Pengaduan</label>
+    <textarea
+      class="form-control"
+      id="pengaduan"
+      rows="4"
+      placeholder="Tuliskan pengaduan secara jelas dan singkat"
+      required
+    ></textarea>
+  </div>
+
+  <!-- BUTTON -->
+  <div class="d-grid">
+    <button type="submit" class="btn btn-primary">
+      Kirim Pengaduan
+    </button>
+  </div>
+</form>
+
           </div>
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Testimonial start  -->
     <section id="testimonial">
@@ -1039,7 +1094,34 @@
         class="d-flex flex-wrap justify-content-between align-items-center border-top"
       ></footer>
     </section> -->
+<script>
+  function kirimPengaduan(event) {
+    event.preventDefault();
 
+    const nama = document.getElementById("nama").value;
+    const pengaduan = document.getElementById("pengaduan").value;
+
+    const subject = "Pengaduan Masyarakat";
+    const body = `
+Yth. Kesdam II/Sriwijaya,
+
+Saya yang bertanda tangan di bawah ini:
+
+Nama : ${nama}
+
+Dengan ini menyampaikan pengaduan sebagai berikut:
+${pengaduan}
+
+Demikian disampaikan, atas perhatian Bapak/Ibu diucapkan terima kasih.
+    `;
+
+    const mailtoLink = `mailto:perskesdam2sriwijaya@gmail.com
+      ?subject=${encodeURIComponent(subject)}
+      &body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+  }
+</script>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
