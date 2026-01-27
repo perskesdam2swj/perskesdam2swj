@@ -921,7 +921,7 @@
 
               <div class="d-grid">
                 <button type="submit" class="btn btn-primary btn-lg">
-                  Kirim Pengaduan
+                  Kirim Pengaduan Via E-Mail
                 </button>
               </div>
 
@@ -1132,8 +1132,7 @@
     const pengaduan = document.getElementById("pengaduan").value;
 
     const subject = "Pengaduan Masyarakat";
-    const body = `
-Yth. Staf Kesdam II/Sriwijaya,
+    const body = `Yth. Staf Kesdam II/Sriwijaya,
 
 Nama : ${nama}
 
@@ -1143,7 +1142,14 @@ ${pengaduan}
 Demikian disampaikan, atas perhatian Bapak/Ibu diucapkan terima kasih.
     `;
 
-    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=infokeskesdam28@gmail.com
+    const email ="infokeskesdam28@gmail.com";
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const link = isMobile
+    ? `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const mailtoLink = `${link}
       &su=${encodeURIComponent(subject)}
       &body=${encodeURIComponent(body)}`;
 
