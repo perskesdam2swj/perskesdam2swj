@@ -846,100 +846,115 @@
     </section>
 
     <!-- Help start  -->
-    <section id="help" class="padding-medium">
+ <section id="help" class="py-5 bg-light">
   <div class="container-fluid px-md-5">
-    <div class="row d-flex justify-content-between align-items-center">
+
+    <!-- JUDUL SECTION -->
+    <div class="text-center mb-5">
+      <h3 class="fw-bold">Layanan Pengaduan Masyarakat</h3>
+      <p class="text-muted mb-0">
+        Kesdam II / Sriwijaya
+      </p>
+    </div>
+
+    <div class="row align-items-stretch g-4">
 
       <!-- MAP -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <div class="image-holder d-flex">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.380239873581!2d104.75941879999999!3d-2.9918046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b77189d7385d5%3A0x54edca35124337f8!2sKESDAM%20II%2FSRIWIJAYA!5e0!3m2!1sid!2sid!4v1768995596407!5m2!1sid!2sid"
-            width="100%"
-            height="450"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+      <div class="col-lg-6">
+        <div class="card shadow-sm h-100 border-0 rounded-4">
+          <div class="card-body p-0">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.380239873581!2d104.75941879999999!3d-2.9918046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b77189d7385d5%3A0x54edca35124337f8!2sKESDAM%20II%2FSRIWIJAYA!5e0!3m2!1sid!2sid!4v1768995596407!5m2!1sid!2sid"
+              class="w-100 rounded-4"
+              height="450"
+              style="border:0;"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
         </div>
       </div>
 
-      <!-- FORM PENGADUAN -->
-      <div class="col-md-6">
-        <div class="card shadow-sm">
+      <!-- FORM -->
+      <div class="col-lg-6">
+        <div class="card shadow-sm border-0 rounded-4 h-100">
+          
+          <!-- HEADER FORM -->
+          <div class="card-header bg-white border-0 text-center rounded-top-4">
+            <img
+              src="images/anti.png"
+              alt="Pengaduan"
+              class="img-fluid mb-3"
+              style="max-height:120px"
+            />
+            <h5 class="fw-bold mb-0">Form Pengaduan Masyarakat</h5>
+          </div>
+
           <div class="card-body p-4">
-<div class="col-md-6 col-lg-3 mb-3">
-            <div class="card">
-              <img
-                  src="images/anti.png"
-                  class="card-img-top rounded-4"
-                  alt="Luxury apartment with modern kitchen"
-              />
-            </div>
-          </div>
-
-            <h5 class="card-title mb-3">Form Pengaduan Masyarakat</h5>
-           
-
             <form onsubmit="kirimPengaduan(event)">
-  <!-- NAMA -->
-  <div class="mb-3">
-    <label for="nama" class="form-label">Nama Lengkap</label>
-    <input
-      type="text"
-      class="form-control"
-      id="nama"
-      placeholder="Masukkan nama lengkap"
-      required
-    />
-  </div>
 
-  <!-- ISI PENGADUAN -->
-  <div class="mb-3">
-    <label for="pengaduan" class="form-label">Uraian Pengaduan</label>
-    <textarea
-      class="form-control"
-      id="pengaduan"
-      rows="4"
-      placeholder="Tuliskan pengaduan secara jelas dan singkat"
-      required
-    ></textarea>
-  </div>
+              <div class="mb-3">
+                <label for="nama" class="form-label fw-semibold">
+                  Nama Lengkap
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nama"
+                  placeholder="Masukkan nama lengkap"
+                  required
+                />
+              </div>
 
-  <!-- BUTTON -->
-  <div class="d-grid">
-    <button type="submit" class="btn btn-primary">
-      Kirim Pengaduan
-    </button>
-  </div>
-</form>
+              <div class="mb-4">
+                <label for="pengaduan" class="form-label fw-semibold">
+                  Uraian Pengaduan
+                </label>
+                <textarea
+                  class="form-control"
+                  id="pengaduan"
+                  rows="4"
+                  placeholder="Tuliskan pengaduan secara jelas dan singkat"
+                  required
+                ></textarea>
+              </div>
 
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Kirim Pengaduan
+                </button>
+              </div>
+
+            </form>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
-  <div class="container-fluid px-md-5">
-    <div class="row d-flex justify-content-between align-items-center">
 
-      <!-- MAP -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <div class="image-holder d-flex">
-         <img
-                  src="images/qrcode.jpg"
-                  class="card-img-top rounded-4"
-                  alt="Luxury apartment with modern kitchen"
-              />
+    <!-- QR CODE -->
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm border-0 rounded-4 text-center">
+          <div class="card-body">
+            <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfeFj8ti03L46AX_WpGUK8EshFtpZR3lwRn7JCVGGyIrHLm2w/viewform">
+              <img
+              src="images/qrcode.jpg"
+              class="img-fluid rounded-4 mb-3"
+              alt="Kuesioner IPKP Kesdam II/SWJ"
+            />
+            </a>
+            <p class="fw-semibold mb-0">
+              Kuesioner Persepsi Kualitas Pelayanan (IPKP)
+            </p>
+          </div>
         </div>
       </div>
-
-      
-
     </div>
+
   </div>
 </section>
+
 
 
     <!-- Testimonial start  -->
@@ -959,7 +974,6 @@
                   <div class="row">
                     <div class="col-md-8">
                       <p class="fw-semibold pt-3 mb-1">Nurhayati</p>
-                      <p class="text-primary opacity-75">PNS Daerah</p>
                     </div>
                   </div>
                 </div>
@@ -973,7 +987,6 @@
                   <div class="row">
                     <div class="col-md-8">
                       <p class="fw-semibold pt-3 mb-1">Yanto</p>
-                      <p class="text-primary opacity-75">Guru Honorer</p>
                     </div>
                   </div>
                 </div>
@@ -987,7 +1000,6 @@
                   <div class="row">
                     <div class="col-md-8">
                       <p class="fw-semibold pt-3 mb-1">Freya</p>
-                      <p class="text-primary opacity-75">Kasir Toko</p>
                     </div>
                   </div>
                 </div>
@@ -1121,9 +1133,7 @@
 
     const subject = "Pengaduan Masyarakat";
     const body = `
-Yth. Kesdam II/Sriwijaya,
-
-Saya yang bertanda tangan di bawah ini:
+Yth. Staf Kesdam II/Sriwijaya,
 
 Nama : ${nama}
 
@@ -1133,8 +1143,8 @@ ${pengaduan}
 Demikian disampaikan, atas perhatian Bapak/Ibu diucapkan terima kasih.
     `;
 
-    const mailtoLink = `mailto:infokeskesdam28@gmail.com
-      ?subject=${encodeURIComponent(subject)}
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=infokeskesdam28@gmail.com
+      &su=${encodeURIComponent(subject)}
       &body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
